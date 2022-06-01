@@ -97,7 +97,14 @@
   content="https://">
 
 </head><body>
-
+  <a href="#eng" data-reload>english</a>
+  <a href="#ger" data-reload>deutsch</a> 
+  <p id ="descr">
+    <b>Hi, I'm Danny</b> <br> Computer Scientist (M.Sc.)  <br> <br> Currently, I'm looking for my next great opportunity to shape and create high-quality Soft-/Hardware products <br> <br>                            With a background in Software Development and Design, I'm always on the pulse of the latest tech. 
+    Which lead me to specializing on fast and efficient computing for accelerator technologies, either in high performance computing clusters or embedded circuits.<br><br>
+    By designing and embedding the latest software technological advancements in algorithmic or machine learning, I improve business products.
+    My aim is to create state-of-the-art systems which push the limits of technology.
+  </p>
 
   <div class="flex-container">
     <div class="flex-item1"> &nbsp;</div>
@@ -109,25 +116,30 @@
     <div class="flex-item3">
           <div class="flex-container">
               <div class="content contentEN">
-                   <b>Hi, I'm Danny</b> <br> Computer Scientist (M.Sc.)  <br> <br> Currently, I'm looking for my next great opportunity to shape and create high-quality Soft-/Hardware products <br> <br>                            With a background in Software Development and Design, I'm always on the pulse of the latest tech. 
-                              Which lead me to specializing on fast and efficient computing for accelerator technologies, either in high performance computing clusters or embedded circuits.<br><br>
-                              By designing and embedding the latest software technological advancements in algorithmic or machine learning, I improve business products.
-                              My aim is to create state-of-the-art systems which push the limits of technology.
-              </div>
-              <div class="content contentDE">
-                <b>Hey, ich bin Danny  </b> <br> Informatiker. (M.Sc.) <br> <br>
-                Zurzeit bin ich auf der Suche nach meiner nächsten großen Chance, hochwertige Soft-/Hardware-Produkte zu gestalten und zu entwickeln. 
-                
-                Ich habe einen Hintergrund in Software-Entwicklung und Design, 
-                bin ich immer am Puls der neuesten Technologien. <br><br>
-                
-                Das hat mich dazu gebracht, mich auf schnelles und effizientes Computing für Beschleunigertechnologien zu spezialisieren, sei es in High-Performance-Computing-Clustern oder eingebetteten Schaltungen.<br><br>
-                
-                Durch das Entwerfen und Einbetten der neuesten softwaretechnischen 
-                Algorithmen und maschinellem Lernen verbessere ich Unternehmensprodukte. <br><br>
-               
-                 Mein Ziel ist es, hochmoderne Systeme zu schaffen, die die Grenzen der Technologie verschieben.
-               
+                <script>
+                    
+                    var dataReload = document.querySelectorAll("[data-reload]");
+                    var language  ={
+                        eng: {
+                            description: "\n Hi, I'm Danny\n \n Computer Scientist (M.Sc.) \n\n Currently, I'm looking for my next great opportunity to shape and create high-quality Soft-/Hardware products.\n\n  With a background in Software Development and Design, I'm always on the pulse of the latest tech. Which lead me to specializing on fast and efficient computing for accelerator technologies, either in high performance computing clusters or embedded circuits.\n\n                        By designing and embedding the latest software technological advancements in algorithmic or machine learning, I improve business products. My aim is to create state-of-the-art systems which push the limits of technology."
+                        },
+                        ger:{
+                            description: "\n Hey, ich bin Danny \n Informatiker. (M.Sc.) \n \n Zurzeit bin ich auf der Suche nach meiner nächsten großen Chance, hochwertige Soft-/Hardware-Produkte zu gestalten und zu entwickeln.              Ich habe einen Hintergrund in Software-Entwicklung und Design, bin ich immer am Puls der neuesten Technologien. \n\n Das hat mich dazu gebracht, mich auf schnelles und effizientes Computing für Beschleunigertechnologien zu spezialisieren, sei es in High-Performance-Computing-Clustern oder eingebetteten Schaltungen.\n \n Durch das Entwerfen und Einbetten der neuesten softwaretechnischen Algorithmen und maschinellem Lernen verbessere ich Unternehmensprodukte. \n\n Mein Ziel ist es, hochmoderne Systeme zu schaffen, die die Grenzen der Technologie verschieben."
+                          }
+                    };
+
+                    if (window.location.hash){
+                        if(window.location.hash === "#ger"){
+                            descr.textContent = language.ger.description;
+                        }
+                    }
+
+                    for(i = 0; i <= data.dataReload.length; i++){
+                        dataReload[i].onclick = function(){
+                            location.reload(true);
+                        };
+                    }
+                </script>
               </div>
           </div>
     </div> 
